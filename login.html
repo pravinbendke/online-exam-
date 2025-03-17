@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        form{
+            height: 600px;
+        }
+     body { background-color: #2E8B57; color: white; font-family: Arial, sans-serif; }
+     .login-container { width: 35%; margin: 10% auto; padding: 20px; border: 2px solid white; border-radius: 15px; background-color: #4682B4; text-align: center; }
+      .login-container h1 { margin-bottom: 20px; }
+       .login-container input[type="text" ],
+        .login-container input[type="password"] { width: 150%; padding: 20px; margin: 10px 0; border: none; border-radius: 5px; }
+         .login-container input[type="submit"] { width: 40%; padding: 10px; margin: 10px 5%; border: none; border-radius: 5px; background-color: #2E8B57; color: white; cursor: pointer; }
+          .login-container input[type="submit"]:hover { background-color: #1E693B; } .error-message { color: red; font-size: large; }
+          
+          </style>
+    
+
+  </head>
+<body>
+    <center><form>
+        {%csrf_token %}
+        <div style="width: 35%;margin: auto;border: 2px solid black;padding: 15px;background-color: cadetblue;margin-top: 200px;">
+            <h1 class="display-4">Login</h1>
+
+        <input size="30px" type="text" name="username" placeholder="enter username"> <br><br>
+
+        <input size="30px" height="40px" type="password" name="password" placeholder="enter password"> <br><br>
+
+        <input size="30px" type="submit" value="sign in" formaction="/loginapp/login/" formmethod="post">
+        <input size="30px" type="submit" value="sign up" formaction="/loginapp/saveUser/" formmethod="get">
+     </form></center>
+     <span style="color: red; font-size: large;"> <center> {{message}} </center> </span>   
+</body>
+</html>
